@@ -40,13 +40,14 @@
         <span class="text-sm text-gray-400 ml-2">HubSpot CMS</span>
       </div>
       <nav class="hidden md:flex gap-6 text-sm text-gray-600">
-        <a href="#quickstart" class="nav-link">Quick Start</a>
+        <a href="#caminos" class="nav-link">Caminos</a>
+        <a href="#editor" class="nav-link">Editor</a>
+        <a href="#cli" class="nav-link">CLI</a>
         <a href="#hubl" class="nav-link">HubL</a>
         <a href="#templates" class="nav-link">Templates</a>
         <a href="#modules" class="nav-link">Modulos</a>
-        <a href="#editor" class="nav-link">Editor</a>
-        <a href="#cli" class="nav-link">CLI</a>
         <a href="#estructura" class="nav-link">Estructura</a>
+        <a href="#docs" class="nav-link">Docs</a>
       </nav>
     </div>
   </header>
@@ -67,36 +68,206 @@
       </div>
     </section>
 
-    <!-- Quick Start -->
-    <section id="quickstart" class="py-14 border-b border-gray-100">
-      <h2 class="text-2xl font-bold mb-6">Quick Start</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="border border-gray-200 rounded-xl p-6">
-          <div class="text-3xl font-bold text-gray-300 mb-2">1</div>
-          <h3 class="font-semibold mb-2">Clona el repo</h3>
-          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>git clone https://github.com/irackbigsmart/hubspot-template.git
-cd hubspot-template</code></pre>
+    <!-- Dos caminos -->
+    <section id="caminos" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-3">Dos caminos para editar</h2>
+      <p class="text-gray-500 mb-8">El tema Pinit v1.0 se puede editar de dos formas. Elige segun tu necesidad.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="#editor" class="border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-400 transition group">
+          <div class="text-4xl mb-4">&#9997;</div>
+          <h3 class="text-xl font-bold mb-2 group-hover:underline">Editor Visual de HubSpot</h3>
+          <p class="text-sm text-gray-500">Edita textos, colores, imagenes y botones directamente desde el navegador. Sin tocar codigo. Ideal para contenido y ajustes rapidos.</p>
+          <div class="mt-4 text-sm font-medium text-gray-400">Ver como &rarr;</div>
+        </a>
+        <a href="#cli" class="border-2 border-gray-200 rounded-2xl p-8 hover:border-gray-400 transition group">
+          <div class="text-4xl mb-4">&#8250;_</div>
+          <h3 class="text-xl font-bold mb-2 group-hover:underline">Desarrollo Local + CLI</h3>
+          <p class="text-sm text-gray-500">Edita en tu editor favorito (VS Code, etc.) y sube cambios con comandos. Mas rapido para desarrollo de modulos y templates.</p>
+          <div class="mt-4 text-sm font-medium text-gray-400">Ver como &rarr;</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CAMINO 1: Editor Visual -->
+    <!-- ============================================ -->
+    <section id="editor" class="py-14 border-b border-gray-100">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">Camino 1</span>
+        <h2 class="text-2xl font-bold">Editor Visual de HubSpot</h2>
+      </div>
+      <p class="text-gray-500 mb-10">Editar contenido directamente desde el navegador, sin codigo.</p>
+
+      <div class="space-y-12">
+
+        <!-- Paso 1: Tema instalado -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">El tema Pinit v1.0 esta instalado en el portal</h3>
+          <p class="text-sm text-gray-500 mb-4">El tema ya esta subido y disponible. Puedes verlo junto a los demas temas del portal en:</p>
+          <a href="https://app.hubspot.com/page-creation/48585867/create-page/landing-page/theme?siteDomain=pinittms.com&pageName=Sin%20t%C3%ADtulo&referrer=contentManager" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline mb-4">Ver temas del portal &rarr;</a>
+          <img src="images/theme.png" alt="Pinit v1.0 en la lista de temas" class="rounded-xl border border-gray-200 max-w-full shadow-sm">
         </div>
-        <div class="border border-gray-200 rounded-xl p-6">
-          <div class="text-3xl font-bold text-gray-300 mb-2">2</div>
-          <h3 class="font-semibold mb-2">Autenticate</h3>
-          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>npm install -g @hubspot/cli
-hs auth</code></pre>
-          <p class="text-sm text-gray-500 mt-2">Necesitas un Personal Access Key del portal.</p>
+
+        <!-- Paso 2: Editor de paginas -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Editor de paginas (drag & drop)</h3>
+          <p class="text-sm text-gray-500 mb-2">Al abrir una pagina en el editor, veras los modulos en el panel izquierdo. Cada modulo expone campos editables:</p>
+          <ul class="text-sm text-gray-500 mb-4 space-y-1 ml-4 list-disc">
+            <li>Textos (titulos, descripciones, botones)</li>
+            <li>Imagenes (hero, cards, logos)</li>
+            <li>Colores (fondo, titulo, texto)</li>
+            <li>URLs de botones y enlaces</li>
+            <li>Visibilidad por dispositivo (desktop/tablet/mobile)</li>
+          </ul>
+          <a href="https://app.hubspot.com/pages/48585867/editor/207341369400/content" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline mb-4">Editar pagina Home demo &rarr;</a>
+          <img src="images/edit.png" alt="Editor visual de HubSpot mostrando campos editables" class="rounded-xl border border-gray-200 max-w-full shadow-sm">
         </div>
-        <div class="border border-gray-200 rounded-xl p-6">
-          <div class="text-3xl font-bold text-gray-300 mb-2">3</div>
-          <h3 class="font-semibold mb-2">Sube y edita</h3>
-          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>hs cms upload pinit-theme pinit-theme
-hs watch pinit-theme pinit-theme</code></pre>
+
+        <!-- Paso 3: Design Manager -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Design Manager (editar codigo en HubSpot)</h3>
+          <p class="text-sm text-gray-500 mb-4">Si necesitas modificar el HTML/CSS/JS de un modulo o template directamente desde HubSpot, usa el Design Manager. Ahi encuentras toda la estructura del tema:</p>
+          <a href="https://app.hubspot.com/design-manager/48585867/?tfid=207335274010" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline mb-4">Abrir Design Manager &rarr;</a>
+          <img src="images/pinit-theme.png" alt="Design Manager con la estructura del tema Pinit" class="rounded-xl border border-gray-200 max-w-full shadow-sm">
+        </div>
+
+        <!-- Demo en vivo -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="font-semibold mb-2">Demo funcional en vivo</h3>
+          <p class="text-sm text-gray-500 mb-3">El template Home esta publicado y se puede ver en:</p>
+          <a href="https://pinittms.com/home-pinitv1-template" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline font-medium">https://pinittms.com/home-pinitv1-template &rarr;</a>
         </div>
       </div>
     </section>
 
+    <!-- ============================================ -->
+    <!-- CAMINO 2: CLI -->
+    <!-- ============================================ -->
+    <section id="cli" class="py-14 border-b border-gray-100">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">Camino 2</span>
+        <h2 class="text-2xl font-bold">Desarrollo Local + CLI</h2>
+      </div>
+      <p class="text-gray-500 mb-10">Editar en tu maquina y subir cambios con comandos. El flujo profesional.</p>
+
+      <!-- Quick Start -->
+      <div class="mb-10">
+        <h3 class="font-semibold text-lg mb-4">Setup rapido (3 pasos)</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="text-3xl font-bold text-gray-300 mb-2">1</div>
+            <h4 class="font-semibold mb-2">Clona el repo</h4>
+            <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>git clone https://github.com/irackbigsmart/hubspot-template.git
+cd hubspot-template</code></pre>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="text-3xl font-bold text-gray-300 mb-2">2</div>
+            <h4 class="font-semibold mb-2">Autenticate</h4>
+            <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>npm install -g @hubspot/cli
+hs auth</code></pre>
+            <p class="text-sm text-gray-500 mt-2">Necesitas un Personal Access Key del portal.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="text-3xl font-bold text-gray-300 mb-2">3</div>
+            <h4 class="font-semibold mb-2">Sube y edita</h4>
+            <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>hs cms upload pinit-theme pinit-theme
+hs watch pinit-theme pinit-theme</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comandos -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Comandos esenciales</h3>
+        <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-4 py-3">Comando</th>
+              <th class="text-left px-4 py-3">Que hace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs auth</td>
+              <td class="px-4 py-3 text-xs">Autenticar un portal con Personal Access Key</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs accounts list</td>
+              <td class="px-4 py-3 text-xs">Listar portales configurados</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest</td>
+              <td class="px-4 py-3 text-xs">Subir carpeta/archivo al Design Manager</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest --account=ID</td>
+              <td class="px-4 py-3 text-xs">Subir a un portal especifico (cuando tienes varios)</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs watch src dest</td>
+              <td class="px-4 py-3 text-xs">Observar cambios y subir automaticamente</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs watch src dest --initial-upload</td>
+              <td class="px-4 py-3 text-xs">Watch + subir todo al inicio (recomendado)</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs fetch filemanager path</td>
+              <td class="px-4 py-3 text-xs">Descargar archivos del portal a local</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs create module nombre</td>
+              <td class="px-4 py-3 text-xs">Crear un modulo nuevo con estructura base</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs create template nombre</td>
+              <td class="px-4 py-3 text-xs">Crear un template nuevo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Flujo tipico -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Flujo de trabajo tipico</h3>
+        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code># 1. Autenticar (solo una vez)
+hs auth
+# Ingresa tu Personal Access Key del portal
+
+# 2. Subir el tema completo
+hs cms upload pinit-theme pinit-theme
+
+# 3. Activar watch para desarrollo
+hs watch pinit-theme pinit-theme --initial-upload
+# Ahora cada cambio local se sube automaticamente
+
+# 4. Crear un modulo nuevo
+hs create module pinit-theme/modules/nuevo-modulo
+
+# 5. Subir un archivo especifico
+hs cms upload pinit-theme/modules/hero-home.module pinit-theme/modules/hero-home.module</code></pre>
+      </div>
+
+      <!-- Config -->
+      <div class="bg-gray-50 rounded-xl p-6">
+        <h3 class="font-semibold mb-3">hubspot.config.yml</h3>
+        <p class="text-sm text-gray-500 mb-3">Este archivo se genera con <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">hs auth</code> y contiene la configuracion de los portales. <strong>No se sube a git</strong> (esta en .gitignore).</p>
+        <pre class="bg-white rounded-lg p-4 text-sm border border-gray-200"><code>defaultPortal: pinit-legacy
+portals:
+  - name: pinit-legacy
+    portalId: 48585867
+    authType: personalaccesskey
+    personalAccessKey: >-
+      tu-access-key-aqui</code></pre>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
     <!-- HubL -->
+    <!-- ============================================ -->
     <section id="hubl" class="py-14 border-b border-gray-100">
       <h2 class="text-2xl font-bold mb-2">HubL - El lenguaje de HubSpot</h2>
-      <p class="text-gray-500 mb-8">HubSpot NO usa HTML puro. Usa <strong>HubL</strong>, un lenguaje de plantillas (similar a Jinja2/Twig) que se mezcla con HTML. Se ejecuta en el servidor y genera HTML final.</p>
+      <p class="text-gray-500 mb-8">HubSpot NO usa HTML puro. Usa <strong>HubL</strong>, un lenguaje de plantillas (similar a Jinja2/Twig) que se mezcla con HTML. Se ejecuta en el servidor y genera el HTML final que ve el usuario.</p>
 
       <div class="space-y-8">
         <!-- Variables -->
@@ -129,7 +300,7 @@ hs watch pinit-theme pinit-theme</code></pre>
 &lt;!-- Herencia: extender un layout base --&gt;
 {% extends "./layouts/base.html" %}
 {% block body %}
-  &lt;!-- contenido aqui --&gt;
+  &lt;!-- contenido de la pagina aqui --&gt;
 {% endblock body %}</code></pre>
         </div>
 
@@ -159,7 +330,7 @@ hs watch pinit-theme pinit-theme</code></pre>
 
         <!-- Resumen -->
         <div class="bg-gray-50 rounded-xl p-6">
-          <h3 class="font-semibold mb-3">Resumen de Sintaxis</h3>
+          <h3 class="font-semibold mb-3">Resumen de Sintaxis HubL</h3>
           <table class="w-full text-sm">
             <thead>
               <tr class="text-left border-b border-gray-200">
@@ -195,7 +366,9 @@ hs watch pinit-theme pinit-theme</code></pre>
       </div>
     </section>
 
+    <!-- ============================================ -->
     <!-- Templates -->
+    <!-- ============================================ -->
     <section id="templates" class="py-14 border-b border-gray-100">
       <h2 class="text-2xl font-bold mb-2">Templates</h2>
       <p class="text-gray-500 mb-8">Los templates definen la estructura de cada tipo de pagina. Usan <strong>DnD Areas</strong> (Drag and Drop) para que el usuario pueda reorganizar modulos desde el editor visual.</p>
@@ -301,16 +474,18 @@ hs watch pinit-theme pinit-theme</code></pre>
       </div>
     </section>
 
+    <!-- ============================================ -->
     <!-- Modules -->
+    <!-- ============================================ -->
     <section id="modules" class="py-14 border-b border-gray-100">
       <h2 class="text-2xl font-bold mb-2">Modulos</h2>
-      <p class="text-gray-500 mb-8">Los modulos son los bloques editables que el usuario arrastra en el editor. Cada modulo tiene 4 archivos:</p>
+      <p class="text-gray-500 mb-8">Los modulos son los bloques editables que el usuario arrastra en el editor. Cada modulo tiene estos archivos:</p>
 
       <div class="bg-gray-50 rounded-xl p-6 mb-8">
         <div class="font-mono text-sm space-y-2">
           <div><span class="text-gray-400">nombre.module/</span></div>
-          <div class="ml-4"><span class="font-semibold">fields.json</span> <span class="text-gray-400 ml-2">&larr; Campos editables (lo que ve el usuario)</span></div>
-          <div class="ml-4"><span class="font-semibold">module.html</span> <span class="text-gray-400 ml-2">&larr; HTML + HubL (la estructura)</span></div>
+          <div class="ml-4"><span class="font-semibold">fields.json</span> <span class="text-gray-400 ml-2">&larr; Campos editables (lo que ve el usuario en el panel)</span></div>
+          <div class="ml-4"><span class="font-semibold">module.html</span> <span class="text-gray-400 ml-2">&larr; HTML + HubL (la estructura visual)</span></div>
           <div class="ml-4"><span class="font-semibold">module.css</span> <span class="text-gray-400 ml-2">&larr; Estilos del modulo</span></div>
           <div class="ml-4"><span class="font-semibold">module.js</span> <span class="text-gray-400 ml-2">&larr; JavaScript (opcional)</span></div>
           <div class="ml-4"><span class="font-semibold">meta.json</span> <span class="text-gray-400 ml-2">&larr; Metadata: label, icon, category</span></div>
@@ -424,136 +599,9 @@ hs watch pinit-theme pinit-theme</code></pre>
       </div>
     </section>
 
-    <!-- Editor Visual -->
-    <section id="editor" class="py-14 border-b border-gray-100">
-      <h2 class="text-2xl font-bold mb-2">Editar desde HubSpot (sin codigo)</h2>
-      <p class="text-gray-500 mb-8">Hay dos caminos para trabajar con el tema: el editor visual de HubSpot o el CLI desde terminal.</p>
-
-      <div class="space-y-8">
-        <!-- Tema disponible -->
-        <div>
-          <h3 class="font-semibold text-lg mb-3">El tema Pinit v1.0 esta instalado</h3>
-          <p class="text-sm text-gray-500 mb-4">Disponible en la cuenta de HubSpot como tema. Puedes verlo en:</p>
-          <a href="https://app.hubspot.com/page-creation/48585867/create-page/landing-page/theme?siteDomain=pinittms.com" target="_blank" class="text-sm text-blue-600 hover:underline">Ver temas del portal &rarr;</a>
-          <img src="images/theme.png" alt="Pinit v1.0 en la lista de temas" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
-        </div>
-
-        <!-- Editor -->
-        <div>
-          <h3 class="font-semibold text-lg mb-3">Editor de paginas</h3>
-          <p class="text-sm text-gray-500 mb-4">Cada modulo expone campos editables en el panel izquierdo. Se cambian textos, colores, imagenes y botones sin tocar codigo.</p>
-          <a href="https://app.hubspot.com/pages/48585867/editor/207341369400/content" target="_blank" class="text-sm text-blue-600 hover:underline">Editar pagina Home demo &rarr;</a>
-          <img src="images/edit.png" alt="Editor visual de HubSpot" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
-        </div>
-
-        <!-- Design Manager -->
-        <div>
-          <h3 class="font-semibold text-lg mb-3">Design Manager (codigo)</h3>
-          <p class="text-sm text-gray-500 mb-4">Para editar el codigo de modulos y templates directamente desde HubSpot:</p>
-          <a href="https://app.hubspot.com/design-manager/48585867/?tfid=207335274010" target="_blank" class="text-sm text-blue-600 hover:underline">Abrir Design Manager &rarr;</a>
-          <img src="images/pinit-theme.png" alt="Design Manager con el tema Pinit" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
-        </div>
-      </div>
-    </section>
-
-    <!-- CLI -->
-    <section id="cli" class="py-14 border-b border-gray-100">
-      <h2 class="text-2xl font-bold mb-2">HubSpot CLI</h2>
-      <p class="text-gray-500 mb-8">El otro camino: editar localmente y subir con comandos. Mas rapido para desarrollo.</p>
-
-      <div class="mb-8">
-        <h3 class="font-semibold text-lg mb-3">Instalacion</h3>
-        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code># Instalar CLI globalmente
-npm install -g @hubspot/cli
-
-# Verificar instalacion
-hs --version</code></pre>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="font-semibold text-lg mb-3">Comandos esenciales</h3>
-        <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-          <thead class="bg-gray-50">
-            <tr>
-              <th class="text-left px-4 py-3">Comando</th>
-              <th class="text-left px-4 py-3">Que hace</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs auth</td>
-              <td class="px-4 py-3 text-xs">Autenticar un portal con Personal Access Key</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs accounts list</td>
-              <td class="px-4 py-3 text-xs">Listar portales configurados</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest</td>
-              <td class="px-4 py-3 text-xs">Subir carpeta/archivo al Design Manager</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest --account=ID</td>
-              <td class="px-4 py-3 text-xs">Subir a un portal especifico</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs watch src dest</td>
-              <td class="px-4 py-3 text-xs">Observar cambios y subir automaticamente</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs watch src dest --initial-upload</td>
-              <td class="px-4 py-3 text-xs">Watch + subir todo al inicio (recomendado)</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs fetch filemanager path</td>
-              <td class="px-4 py-3 text-xs">Descargar archivos del portal</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs create module nombre</td>
-              <td class="px-4 py-3 text-xs">Crear un modulo nuevo con estructura base</td>
-            </tr>
-            <tr class="border-t border-gray-100">
-              <td class="px-4 py-3 font-mono text-xs">hs create template nombre</td>
-              <td class="px-4 py-3 text-xs">Crear un template nuevo</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="font-semibold text-lg mb-3">Flujo de trabajo tipico</h3>
-        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code># 1. Autenticar (solo una vez)
-hs auth
-# Ingresa tu Personal Access Key del portal
-
-# 2. Subir el tema completo
-hs cms upload pinit-theme pinit-theme
-
-# 3. Activar watch para desarrollo
-hs watch pinit-theme pinit-theme --initial-upload
-# Ahora cada cambio local se sube automaticamente
-
-# 4. Crear un modulo nuevo
-hs create module pinit-theme/modules/nuevo-modulo
-
-# 5. Subir un archivo especifico
-hs cms upload pinit-theme/modules/hero-home.module pinit-theme/modules/hero-home.module</code></pre>
-      </div>
-
-      <div class="bg-gray-50 rounded-xl p-6">
-        <h3 class="font-semibold mb-3">hubspot.config.yml</h3>
-        <p class="text-sm text-gray-500 mb-3">Este archivo se genera con <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">hs auth</code> y contiene la configuracion de los portales. <strong>No se sube a git</strong> (esta en .gitignore).</p>
-        <pre class="bg-white rounded-lg p-4 text-sm border border-gray-200"><code>defaultPortal: pinit-legacy
-portals:
-  - name: pinit-legacy
-    portalId: 48585867
-    authType: personalaccesskey
-    personalAccessKey: >-
-      tu-access-key-aqui</code></pre>
-      </div>
-    </section>
-
+    <!-- ============================================ -->
     <!-- Estructura -->
+    <!-- ============================================ -->
     <section id="estructura" class="py-14 border-b border-gray-100">
       <h2 class="text-2xl font-bold mb-2">Estructura del Proyecto</h2>
       <p class="text-gray-500 mb-8">Asi esta organizado el repositorio.</p>
@@ -605,9 +653,138 @@ portals:
       blog-post.html</code></pre>
     </section>
 
-    <!-- Links rapidos -->
+    <!-- ============================================ -->
+    <!-- Documentacion Oficial -->
+    <!-- ============================================ -->
+    <section id="docs" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">Documentacion Oficial de HubSpot</h2>
+      <p class="text-gray-500 mb-8">Recursos oficiales para profundizar en el desarrollo con HubSpot CMS.</p>
+
+      <!-- Esenciales -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-4">Esenciales</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="https://developers.hubspot.com/docs/cms" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">CMS Developer Docs</div>
+              <div class="text-xs text-gray-400">Documentacion principal del CMS</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/reference/hubl/overview" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Referencia HubL</div>
+              <div class="text-xs text-gray-400">Sintaxis completa del lenguaje de templates</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/hubl/functions" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">HubL Functions</div>
+              <div class="text-xs text-gray-400">Funciones disponibles en templates</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/developer-tooling/local-development/hubspot-cli/reference" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">CLI Reference</div>
+              <div class="text-xs text-gray-400">Todos los comandos del HubSpot CLI</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Temas y Modulos -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-4">Temas y Modulos</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="https://developers.hubspot.com/docs/guides/cms/content/themes/getting-started" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Themes Guide</div>
+              <div class="text-xs text-gray-400">Como crear y configurar temas</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/guides/getting-started-with-modules" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Modules Guide</div>
+              <div class="text-xs text-gray-400">Crear modulos custom paso a paso</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/reference/fields/overview" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Fields Reference</div>
+              <div class="text-xs text-gray-400">Todos los tipos de campo para fields.json</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/hubl/tags/dnd-areas" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">DnD Areas</div>
+              <div class="text-xs text-gray-400">Tags de drag and drop para templates</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/docs/cms/building-blocks/templates/drag-and-drop-areas/sections" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Sections</div>
+              <div class="text-xs text-gray-400">Crear secciones reutilizables</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://knowledge.hubspot.com/design-manager/a-quick-tour-of-the-design-manager" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Design Manager Tour</div>
+              <div class="text-xs text-gray-400">Guia visual del Design Manager</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Comunidad y Aprendizaje -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-4">Comunidad y Aprendizaje</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="https://community.hubspot.com/t5/CMS-Development/bd-p/designers_support" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Community Forum</div>
+              <div class="text-xs text-gray-400">Foro de desarrollo CMS (preguntas y respuestas)</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/slack" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Developer Slack</div>
+              <div class="text-xs text-gray-400">Canal de Slack para developers</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://academy.hubspot.com/courses" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">HubSpot Academy</div>
+              <div class="text-xs text-gray-400">Cursos gratuitos y certificaciones</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+          <a href="https://developers.hubspot.com/changelog" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-5 py-4 hover:bg-gray-50 transition">
+            <div>
+              <div class="font-semibold text-sm">Changelog</div>
+              <div class="text-xs text-gray-400">Cambios y actualizaciones de la plataforma</div>
+            </div>
+            <span class="text-gray-300">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- Links rapidos del proyecto -->
+    <!-- ============================================ -->
     <section class="py-14">
-      <h2 class="text-2xl font-bold mb-6">Links rapidos</h2>
+      <h2 class="text-2xl font-bold mb-6">Links del Proyecto</h2>
       <div class="grid md:grid-cols-2 gap-4">
         <a href="https://pinittms.com/home-pinitv1-template" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
           <div>
@@ -634,20 +811,6 @@ portals:
           <div>
             <div class="font-semibold text-sm">Repositorio GitHub</div>
             <div class="text-xs text-gray-400">irackbigsmart/hubspot-template</div>
-          </div>
-          <span class="text-gray-300">&rarr;</span>
-        </a>
-        <a href="https://developers.hubspot.com/docs/guides/cms" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
-          <div>
-            <div class="font-semibold text-sm">Documentacion oficial HubSpot CMS</div>
-            <div class="text-xs text-gray-400">developers.hubspot.com</div>
-          </div>
-          <span class="text-gray-300">&rarr;</span>
-        </a>
-        <a href="https://developers.hubspot.com/docs/reference/cms/hubl/overview" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
-          <div>
-            <div class="font-semibold text-sm">Referencia HubL</div>
-            <div class="text-xs text-gray-400">Lenguaje de templates de HubSpot</div>
           </div>
           <span class="text-gray-300">&rarr;</span>
         </a>
