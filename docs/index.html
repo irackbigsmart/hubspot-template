@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinit v1.0 - HubSpot CMS Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { rubik: ['Rubik', 'sans-serif'] },
+          colors: {
+            purple: { DEFAULT: '#602166', light: '#8C85C1' },
+            green: { DEFAULT: '#53B66C' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Rubik', sans-serif; }
+    code, pre code { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+    pre { overflow-x: auto; }
+    .nav-link { transition: all 0.15s; }
+    .nav-link:hover { opacity: 0.7; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="border-b border-gray-200 sticky top-0 bg-white/95 backdrop-blur z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <span class="text-xl font-bold">Pinit v1.0</span>
+        <span class="text-sm text-gray-400 ml-2">HubSpot CMS</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-gray-600">
+        <a href="#quickstart" class="nav-link">Quick Start</a>
+        <a href="#hubl" class="nav-link">HubL</a>
+        <a href="#templates" class="nav-link">Templates</a>
+        <a href="#modules" class="nav-link">Modulos</a>
+        <a href="#editor" class="nav-link">Editor</a>
+        <a href="#cli" class="nav-link">CLI</a>
+        <a href="#estructura" class="nav-link">Estructura</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6">
+
+    <!-- Hero -->
+    <section class="py-16 border-b border-gray-100">
+      <h1 class="text-4xl font-bold mb-4">Manual de Onboarding</h1>
+      <p class="text-lg text-gray-500 max-w-2xl">Todo lo que necesitas para continuar el desarrollo del tema Pinit v1.0 en HubSpot CMS. De cero a productivo en minutos.</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="https://pinittms.com/home-pinitv1-template" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-700">
+          Ver Demo en Vivo &rarr;
+        </a>
+        <a href="https://github.com/irackbigsmart/hubspot-template" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 text-sm rounded-lg hover:bg-gray-50">
+          Repositorio GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quickstart" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-6">Quick Start</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border border-gray-200 rounded-xl p-6">
+          <div class="text-3xl font-bold text-gray-300 mb-2">1</div>
+          <h3 class="font-semibold mb-2">Clona el repo</h3>
+          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>git clone https://github.com/irackbigsmart/hubspot-template.git
+cd hubspot-template</code></pre>
+        </div>
+        <div class="border border-gray-200 rounded-xl p-6">
+          <div class="text-3xl font-bold text-gray-300 mb-2">2</div>
+          <h3 class="font-semibold mb-2">Autenticate</h3>
+          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>npm install -g @hubspot/cli
+hs auth</code></pre>
+          <p class="text-sm text-gray-500 mt-2">Necesitas un Personal Access Key del portal.</p>
+        </div>
+        <div class="border border-gray-200 rounded-xl p-6">
+          <div class="text-3xl font-bold text-gray-300 mb-2">3</div>
+          <h3 class="font-semibold mb-2">Sube y edita</h3>
+          <pre class="bg-gray-50 rounded-lg p-3 text-sm"><code>hs cms upload pinit-theme pinit-theme
+hs watch pinit-theme pinit-theme</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- HubL -->
+    <section id="hubl" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">HubL - El lenguaje de HubSpot</h2>
+      <p class="text-gray-500 mb-8">HubSpot NO usa HTML puro. Usa <strong>HubL</strong>, un lenguaje de plantillas (similar a Jinja2/Twig) que se mezcla con HTML. Se ejecuta en el servidor y genera HTML final.</p>
+
+      <div class="space-y-8">
+        <!-- Variables -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Variables y Expresiones</h3>
+          <p class="text-sm text-gray-500 mb-3">Se usan doble llave <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">{{ }}</code> para imprimir valores.</p>
+          <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code>&lt;!-- Imprime el valor de un campo del modulo --&gt;
+&lt;h1&gt;{{ module.headline }}&lt;/h1&gt;
+&lt;p&gt;{{ module.description }}&lt;/p&gt;
+&lt;img src="{{ module.image.src }}" alt="{{ module.image.alt }}"&gt;</code></pre>
+        </div>
+
+        <!-- Tags -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Tags (Logica)</h3>
+          <p class="text-sm text-gray-500 mb-3">Se usan <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm">{% %}</code> para logica: condicionales, loops, herencia.</p>
+          <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code>&lt;!-- Condicional: solo mostrar si el campo tiene valor --&gt;
+{% if module.headline %}
+  &lt;h1&gt;{{ module.headline }}&lt;/h1&gt;
+{% endif %}
+
+&lt;!-- Loop: recorrer una lista de items --&gt;
+{% for card in module.cards %}
+  &lt;div class="card"&gt;
+    &lt;h3&gt;{{ card.title }}&lt;/h3&gt;
+    &lt;p&gt;{{ card.description }}&lt;/p&gt;
+  &lt;/div&gt;
+{% endfor %}
+
+&lt;!-- Herencia: extender un layout base --&gt;
+{% extends "./layouts/base.html" %}
+{% block body %}
+  &lt;!-- contenido aqui --&gt;
+{% endblock body %}</code></pre>
+        </div>
+
+        <!-- Comentarios -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Comentarios</h3>
+          <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code>{# Esto es un comentario HubL, no aparece en el HTML final #}</code></pre>
+        </div>
+
+        <!-- Scope CSS -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Estilos Dinamicos (scope_css)</h3>
+          <p class="text-sm text-gray-500 mb-3">Permite aplicar colores desde los campos del editor sin conflicto entre instancias del mismo modulo.</p>
+          <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code>{% require_css %}
+  &lt;style&gt;
+    {% scope_css %}
+      .hero-home {
+        background-color: {{ module.bg_color.color }};
+      }
+      .hero-home__title {
+        color: {{ module.title_color.color }};
+      }
+    {% end_scope_css %}
+  &lt;/style&gt;
+{% end_require_css %}</code></pre>
+        </div>
+
+        <!-- Resumen -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="font-semibold mb-3">Resumen de Sintaxis</h3>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left border-b border-gray-200">
+                <th class="pb-2">Sintaxis</th>
+                <th class="pb-2">Uso</th>
+                <th class="pb-2">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600">
+              <tr class="border-b border-gray-100">
+                <td class="py-2 font-mono">{{ }}</td>
+                <td>Imprimir valores</td>
+                <td class="font-mono text-xs">{{ module.title }}</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-2 font-mono">{% %}</td>
+                <td>Logica (if, for, extends, block)</td>
+                <td class="font-mono text-xs">{% if module.title %}...{% endif %}</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-2 font-mono">{# #}</td>
+                <td>Comentarios</td>
+                <td class="font-mono text-xs">{# nota interna #}</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-mono">|filtro</td>
+                <td>Filtros (transformar valor)</td>
+                <td class="font-mono text-xs">{{ module.title|upper }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Templates -->
+    <section id="templates" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">Templates</h2>
+      <p class="text-gray-500 mb-8">Los templates definen la estructura de cada tipo de pagina. Usan <strong>DnD Areas</strong> (Drag and Drop) para que el usuario pueda reorganizar modulos desde el editor visual.</p>
+
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Jerarquia DnD (obligatoria)</h3>
+        <div class="bg-gray-50 rounded-xl p-6 font-mono text-sm space-y-1">
+          <div>dnd_area</div>
+          <div class="ml-4">&rarr; dnd_section</div>
+          <div class="ml-8">&rarr; dnd_column</div>
+          <div class="ml-12">&rarr; dnd_row</div>
+          <div class="ml-16">&rarr; dnd_module</div>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">Siempre respetar este orden. Un modulo NUNCA va directo dentro de dnd_area.</p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Ejemplo: Template Home</h3>
+        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code>&lt;!--
+  templateType: page
+  label: Home
+  isAvailableForNewContent: true
+--&gt;
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content"
+    label="Main Content",
+    class="main-content-area"
+  %}
+
+    {# ===== Hero Section ===== #}
+    {% dnd_section %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="../modules/hero-home.module" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# ===== Product Cards ===== #}
+    {% dnd_section %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="../modules/product-cards.module" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+{% endblock body %}</code></pre>
+      </div>
+
+      <!-- Annotation -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Annotation (cabecera del template)</h3>
+        <p class="text-sm text-gray-500 mb-3">Cada template debe tener un comentario HTML al inicio con estos campos:</p>
+        <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+            <tr><th class="text-left px-4 py-2">Campo</th><th class="text-left px-4 py-2">Valores</th><th class="text-left px-4 py-2">Descripcion</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">templateType</td><td class="px-4 py-2 text-xs">page, blog_post, blog_listing, error_page, search_results_page</td><td class="px-4 py-2 text-xs">Tipo de contenido</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">label</td><td class="px-4 py-2 text-xs">Texto libre</td><td class="px-4 py-2 text-xs">Nombre que ve el usuario</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">isAvailableForNewContent</td><td class="px-4 py-2 text-xs">true / false</td><td class="px-4 py-2 text-xs">Si aparece en el selector de templates</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">screenshotPath</td><td class="px-4 py-2 text-xs">Ruta relativa a imagen</td><td class="px-4 py-2 text-xs">Preview en el selector</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Templates disponibles -->
+      <div>
+        <h3 class="font-semibold text-lg mb-3">Templates disponibles en Pinit v1.0</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">home.html</span>
+            <span class="text-sm">Pagina principal con hero, cards, logos, CTA</span>
+          </div>
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">landing-page.html</span>
+            <span class="text-sm">Landing generica con DnD area vacia</span>
+          </div>
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">about.html</span>
+            <span class="text-sm">Pagina About con secciones de contenido</span>
+          </div>
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">contact.html</span>
+            <span class="text-sm">Pagina de contacto con formulario</span>
+          </div>
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">blog-index.html</span>
+            <span class="text-sm">Listado de posts del blog</span>
+          </div>
+          <div class="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3">
+            <span class="text-gray-400 font-mono text-xs w-32">blog-post.html</span>
+            <span class="text-sm">Template individual de blog post</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">Modulos</h2>
+      <p class="text-gray-500 mb-8">Los modulos son los bloques editables que el usuario arrastra en el editor. Cada modulo tiene 4 archivos:</p>
+
+      <div class="bg-gray-50 rounded-xl p-6 mb-8">
+        <div class="font-mono text-sm space-y-2">
+          <div><span class="text-gray-400">nombre.module/</span></div>
+          <div class="ml-4"><span class="font-semibold">fields.json</span> <span class="text-gray-400 ml-2">&larr; Campos editables (lo que ve el usuario)</span></div>
+          <div class="ml-4"><span class="font-semibold">module.html</span> <span class="text-gray-400 ml-2">&larr; HTML + HubL (la estructura)</span></div>
+          <div class="ml-4"><span class="font-semibold">module.css</span> <span class="text-gray-400 ml-2">&larr; Estilos del modulo</span></div>
+          <div class="ml-4"><span class="font-semibold">module.js</span> <span class="text-gray-400 ml-2">&larr; JavaScript (opcional)</span></div>
+          <div class="ml-4"><span class="font-semibold">meta.json</span> <span class="text-gray-400 ml-2">&larr; Metadata: label, icon, category</span></div>
+        </div>
+      </div>
+
+      <!-- Ejemplo fields.json -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Ejemplo: fields.json (hero-home)</h3>
+        <p class="text-sm text-gray-500 mb-3">Define los campos editables. El usuario los modifica desde el panel izquierdo del editor.</p>
+        <pre class="bg-gray-50 rounded-lg p-4 text-sm max-h-80 overflow-y-auto"><code>[
+  {
+    "name": "headline",
+    "label": "Headline",
+    "type": "text",
+    "default": "Tecnologia para logistica"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "richtext",
+    "default": "&lt;p&gt;Soluciones tecnologicas...&lt;/p&gt;"
+  },
+  {
+    "name": "image",
+    "label": "Hero Image",
+    "type": "image",
+    "default": {
+      "src": "https://...",
+      "alt": "TMS Pinit"
+    }
+  },
+  {
+    "name": "bg_color",
+    "label": "Section Background",
+    "type": "color",
+    "default": { "color": "#FFFFFF" }
+  }
+]</code></pre>
+      </div>
+
+      <!-- Tipos de campo -->
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Tipos de campo comunes</h3>
+        <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+            <tr><th class="text-left px-4 py-2">Tipo</th><th class="text-left px-4 py-2">Que genera</th><th class="text-left px-4 py-2">Acceso en HubL</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">text</td><td class="px-4 py-2 text-xs">Input de texto</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">richtext</td><td class="px-4 py-2 text-xs">Editor WYSIWYG</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">image</td><td class="px-4 py-2 text-xs">Selector de imagen</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre.src }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">color</td><td class="px-4 py-2 text-xs">Color picker</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre.color }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">url</td><td class="px-4 py-2 text-xs">Selector de URL</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre.href }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">boolean</td><td class="px-4 py-2 text-xs">Toggle on/off</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">choice</td><td class="px-4 py-2 text-xs">Select / Radio</td><td class="px-4 py-2 font-mono text-xs">{{ module.nombre }}</td></tr>
+            <tr class="border-t border-gray-100"><td class="px-4 py-2 font-mono text-xs">group</td><td class="px-4 py-2 text-xs">Agrupa campos</td><td class="px-4 py-2 font-mono text-xs">{{ module.grupo.campo }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modulos disponibles -->
+      <div>
+        <h3 class="font-semibold text-lg mb-3">Modulos disponibles en Pinit v1.0</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">hero-home</span>
+            <p class="text-xs text-gray-500">Hero principal con titulo, descripcion, 2 botones e imagen</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">hero</span>
+            <p class="text-xs text-gray-500">Hero generico para paginas internas</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">product-cards</span>
+            <p class="text-xs text-gray-500">Grid de 3 cards con imagen, titulo, descripcion y link</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">logo-carousel</span>
+            <p class="text-xs text-gray-500">Carrusel de logos de clientes</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">cta-form</span>
+            <p class="text-xs text-gray-500">Seccion CTA con formulario de HubSpot</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">cards</span>
+            <p class="text-xs text-gray-500">Grid de cards configurable</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">cta</span>
+            <p class="text-xs text-gray-500">Call to Action con titulo y boton</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">rich-text</span>
+            <p class="text-xs text-gray-500">Bloque de texto enriquecido</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">image</span>
+            <p class="text-xs text-gray-500">Imagen con alt text y link opcional</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">spacer</span>
+            <p class="text-xs text-gray-500">Espaciador con presets S/M/L y custom</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg px-4 py-3">
+            <span class="font-semibold text-sm">title</span>
+            <p class="text-xs text-gray-500">Titulo H2/H3 con color y alineacion configurable</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editor Visual -->
+    <section id="editor" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">Editar desde HubSpot (sin codigo)</h2>
+      <p class="text-gray-500 mb-8">Hay dos caminos para trabajar con el tema: el editor visual de HubSpot o el CLI desde terminal.</p>
+
+      <div class="space-y-8">
+        <!-- Tema disponible -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">El tema Pinit v1.0 esta instalado</h3>
+          <p class="text-sm text-gray-500 mb-4">Disponible en la cuenta de HubSpot como tema. Puedes verlo en:</p>
+          <a href="https://app.hubspot.com/page-creation/48585867/create-page/landing-page/theme?siteDomain=pinittms.com" target="_blank" class="text-sm text-blue-600 hover:underline">Ver temas del portal &rarr;</a>
+          <img src="images/theme.png" alt="Pinit v1.0 en la lista de temas" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
+        </div>
+
+        <!-- Editor -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Editor de paginas</h3>
+          <p class="text-sm text-gray-500 mb-4">Cada modulo expone campos editables en el panel izquierdo. Se cambian textos, colores, imagenes y botones sin tocar codigo.</p>
+          <a href="https://app.hubspot.com/pages/48585867/editor/207341369400/content" target="_blank" class="text-sm text-blue-600 hover:underline">Editar pagina Home demo &rarr;</a>
+          <img src="images/edit.png" alt="Editor visual de HubSpot" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
+        </div>
+
+        <!-- Design Manager -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3">Design Manager (codigo)</h3>
+          <p class="text-sm text-gray-500 mb-4">Para editar el codigo de modulos y templates directamente desde HubSpot:</p>
+          <a href="https://app.hubspot.com/design-manager/48585867/?tfid=207335274010" target="_blank" class="text-sm text-blue-600 hover:underline">Abrir Design Manager &rarr;</a>
+          <img src="images/pinit-theme.png" alt="Design Manager con el tema Pinit" class="mt-4 rounded-xl border border-gray-200 max-w-full shadow-sm">
+        </div>
+      </div>
+    </section>
+
+    <!-- CLI -->
+    <section id="cli" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">HubSpot CLI</h2>
+      <p class="text-gray-500 mb-8">El otro camino: editar localmente y subir con comandos. Mas rapido para desarrollo.</p>
+
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Instalacion</h3>
+        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code># Instalar CLI globalmente
+npm install -g @hubspot/cli
+
+# Verificar instalacion
+hs --version</code></pre>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Comandos esenciales</h3>
+        <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-4 py-3">Comando</th>
+              <th class="text-left px-4 py-3">Que hace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs auth</td>
+              <td class="px-4 py-3 text-xs">Autenticar un portal con Personal Access Key</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs accounts list</td>
+              <td class="px-4 py-3 text-xs">Listar portales configurados</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest</td>
+              <td class="px-4 py-3 text-xs">Subir carpeta/archivo al Design Manager</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs cms upload src dest --account=ID</td>
+              <td class="px-4 py-3 text-xs">Subir a un portal especifico</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs watch src dest</td>
+              <td class="px-4 py-3 text-xs">Observar cambios y subir automaticamente</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs watch src dest --initial-upload</td>
+              <td class="px-4 py-3 text-xs">Watch + subir todo al inicio (recomendado)</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs fetch filemanager path</td>
+              <td class="px-4 py-3 text-xs">Descargar archivos del portal</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs create module nombre</td>
+              <td class="px-4 py-3 text-xs">Crear un modulo nuevo con estructura base</td>
+            </tr>
+            <tr class="border-t border-gray-100">
+              <td class="px-4 py-3 font-mono text-xs">hs create template nombre</td>
+              <td class="px-4 py-3 text-xs">Crear un template nuevo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="font-semibold text-lg mb-3">Flujo de trabajo tipico</h3>
+        <pre class="bg-gray-50 rounded-lg p-4 text-sm"><code># 1. Autenticar (solo una vez)
+hs auth
+# Ingresa tu Personal Access Key del portal
+
+# 2. Subir el tema completo
+hs cms upload pinit-theme pinit-theme
+
+# 3. Activar watch para desarrollo
+hs watch pinit-theme pinit-theme --initial-upload
+# Ahora cada cambio local se sube automaticamente
+
+# 4. Crear un modulo nuevo
+hs create module pinit-theme/modules/nuevo-modulo
+
+# 5. Subir un archivo especifico
+hs cms upload pinit-theme/modules/hero-home.module pinit-theme/modules/hero-home.module</code></pre>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl p-6">
+        <h3 class="font-semibold mb-3">hubspot.config.yml</h3>
+        <p class="text-sm text-gray-500 mb-3">Este archivo se genera con <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">hs auth</code> y contiene la configuracion de los portales. <strong>No se sube a git</strong> (esta en .gitignore).</p>
+        <pre class="bg-white rounded-lg p-4 text-sm border border-gray-200"><code>defaultPortal: pinit-legacy
+portals:
+  - name: pinit-legacy
+    portalId: 48585867
+    authType: personalaccesskey
+    personalAccessKey: >-
+      tu-access-key-aqui</code></pre>
+      </div>
+    </section>
+
+    <!-- Estructura -->
+    <section id="estructura" class="py-14 border-b border-gray-100">
+      <h2 class="text-2xl font-bold mb-2">Estructura del Proyecto</h2>
+      <p class="text-gray-500 mb-8">Asi esta organizado el repositorio.</p>
+
+      <pre class="bg-gray-50 rounded-lg p-6 text-sm"><code>hubspot-template/
+  pinit-theme/
+    theme.json              # Config del tema (nombre, breakpoints)
+    fields.json             # Campos globales del tema
+    css/
+      main.css              # Variables CSS globales (colores, spacing, tipografia)
+      theme-overrides.css   # Overrides del tema
+    js/
+      main.js               # JavaScript global
+    images/
+      section-previews/     # Screenshots de secciones pre-built
+      theme-preview.png     # Preview del tema en el selector
+    modules/
+      hero-home.module/     # Cada modulo es una carpeta .module
+      hero.module/
+      product-cards.module/
+      logo-carousel.module/
+      cta-form.module/
+      cards.module/
+      cta.module/
+      rich-text.module/
+      image.module/
+      spacer.module/
+      title.module/
+    sections/               # Secciones pre-armadas (shortcuts de layout)
+      hero-section.html
+      cards-section.html
+      grid-1.html ... grid-4.html
+    templates/
+      layouts/
+        base.html           # Layout base (head, header, footer)
+      partials/
+        header.html         # Header global
+        footer.html         # Footer global
+      system/
+        404.html
+        500.html
+        password-prompt.html
+        search-results.html
+      home.html
+      about.html
+      landing-page.html
+      contact.html
+      blog-index.html
+      blog-post.html</code></pre>
+    </section>
+
+    <!-- Links rapidos -->
+    <section class="py-14">
+      <h2 class="text-2xl font-bold mb-6">Links rapidos</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://pinittms.com/home-pinitv1-template" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Demo en vivo</div>
+            <div class="text-xs text-gray-400">pinittms.com/home-pinitv1-template</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+        <a href="https://app.hubspot.com/pages/48585867/editor/207341369400/content" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Editar pagina demo</div>
+            <div class="text-xs text-gray-400">Editor visual de HubSpot</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+        <a href="https://app.hubspot.com/design-manager/48585867/?tfid=207335274010" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Design Manager</div>
+            <div class="text-xs text-gray-400">Editar codigo en HubSpot</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+        <a href="https://github.com/irackbigsmart/hubspot-template" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Repositorio GitHub</div>
+            <div class="text-xs text-gray-400">irackbigsmart/hubspot-template</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+        <a href="https://developers.hubspot.com/docs/guides/cms" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Documentacion oficial HubSpot CMS</div>
+            <div class="text-xs text-gray-400">developers.hubspot.com</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+        <a href="https://developers.hubspot.com/docs/reference/cms/hubl/overview" target="_blank" class="flex items-center justify-between border border-gray-200 rounded-xl px-6 py-4 hover:bg-gray-50 transition">
+          <div>
+            <div class="font-semibold text-sm">Referencia HubL</div>
+            <div class="text-xs text-gray-400">Lenguaje de templates de HubSpot</div>
+          </div>
+          <span class="text-gray-300">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-8 text-center text-sm text-gray-400">
+    Pinit v1.0 &middot; HubSpot CMS Theme &middot; Portal 48585867
+  </footer>
+
+</body>
+</html>
