@@ -1,0 +1,28 @@
+<!--
+  templateType: section
+  label: Pinit_Testimonial_Section
+  isAvailableForNewContent: true
+  description: Centered testimonial quote with attribution.
+  screenshotPath: ../images/section-previews/testimonial-section.png
+-->
+
+{% dnd_section
+  background_color={"color": "#F6F6F6", "opacity": 100},
+  padding={"top": 60, "bottom": 60},
+  vertical_alignment="MIDDLE",
+  max_width=1200
+%}
+  {% dnd_column width=8, offset=2 %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <blockquote style="text-align: center; font-size: 20px; font-style: italic; color: #4F4F4F; border: none; margin: 0; padding: 0;">
+            "Add a customer testimonial or quote here. Social proof builds trust and credibility with your audience."
+          </blockquote>
+          <p style="text-align: center; margin-top: 24px; font-weight: 600; color: #000000;">Jane Doe</p>
+          <p style="text-align: center; color: #959595; font-size: 14px;">CEO, Company Name</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

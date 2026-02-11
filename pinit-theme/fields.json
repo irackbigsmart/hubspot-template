@@ -1,0 +1,81 @@
+[
+  {
+    "name": "global_colors",
+    "label": "Colors",
+    "type": "group",
+    "children": [
+      {
+        "name": "primary",
+        "label": "Primary (Purple)",
+        "type": "color",
+        "default": { "color": "#602166" }
+      },
+      {
+        "name": "secondary",
+        "label": "Secondary (Green)",
+        "type": "color",
+        "default": { "color": "#53B66C" }
+      },
+      {
+        "name": "accent",
+        "label": "Accent (Pink)",
+        "type": "color",
+        "default": { "color": "#B53E66" }
+      },
+      {
+        "name": "text",
+        "label": "Text Color",
+        "type": "color",
+        "default": { "color": "#000000" }
+      },
+      {
+        "name": "text_light",
+        "label": "Light Text",
+        "type": "color",
+        "default": { "color": "#4F4F4F" }
+      },
+      {
+        "name": "background",
+        "label": "Background",
+        "type": "color",
+        "default": { "color": "#FFFFFF" }
+      },
+      {
+        "name": "surface",
+        "label": "Surface (Cards, etc.)",
+        "type": "color",
+        "default": { "color": "#F6F6F6" }
+      }
+    ]
+  },
+  {
+    "name": "global_fonts",
+    "label": "Fonts",
+    "type": "group",
+    "children": [
+      {
+        "name": "primary",
+        "label": "Primary Font",
+        "type": "font",
+        "default": {
+          "font": "Rubik",
+          "font_set": "GOOGLE",
+          "size": 16,
+          "size_unit": "px"
+        }
+      },
+      {
+        "name": "heading",
+        "label": "Heading Font",
+        "type": "font",
+        "default": {
+          "font": "Rubik",
+          "font_set": "GOOGLE",
+          "size": 28,
+          "size_unit": "px",
+          "styles": { "font-weight": "600" }
+        }
+      }
+    ]
+  }
+]

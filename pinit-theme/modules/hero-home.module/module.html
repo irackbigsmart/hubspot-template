@@ -1,0 +1,47 @@
+{# Dynamic styles #}
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .hero-home {
+        background-color: {{ module.bg_color.color }};
+      }
+      .hero-home__title {
+        color: {{ module.title_color.color }};
+      }
+      .hero-home__desc,
+      .hero-home__desc p {
+        color: {{ module.text_color.color }};
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<section class="hero-home{{ ' hide-desktop' if module.hide_desktop }}{{ ' hide-tablet' if module.hide_tablet }}{{ ' hide-mobile' if module.hide_mobile }}">
+  <div class="hero-home__inner">
+    <div class="hero-home__content">
+      {% if module.headline %}
+        <h1 class="hero-home__title">{{ module.headline }}</h1>
+      {% endif %}
+      {% if module.description %}
+        <div class="hero-home__desc">{{ module.description }}</div>
+      {% endif %}
+      <div class="hero-home__buttons">
+        {% if module.button_primary.text %}
+          <a href="{{ module.button_primary.url.href }}" class="btn btn--{{ module.button_primary.style }}">
+            {{ module.button_primary.text }}
+          </a>
+        {% endif %}
+        {% if module.button_secondary.text %}
+          <a href="{{ module.button_secondary.url.href }}" class="btn btn--{{ module.button_secondary.style }}">
+            {{ module.button_secondary.text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero-home__media">
+      {% if module.image.src %}
+        <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="{{ module.image.loading }}">
+      {% endif %}
+    </div>
+  </div>
+</section>

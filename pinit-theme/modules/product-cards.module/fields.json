@@ -1,0 +1,128 @@
+[
+  {
+    "name": "heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Conoce como podemos ayudarte"
+  },
+  {
+    "name": "cards",
+    "label": "Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "default": [
+      {
+        "image": {
+          "src": "https://pinittms.com/hs-fs/hubfs/AiPinit_Sketch_iMac_CH.png?width=600&height=579&name=AiPinit_Sketch_iMac_CH.png",
+          "alt": "TMS - Plataforma de gestion de transporte",
+          "loading": "lazy",
+          "width": 600,
+          "height": 579
+        },
+        "title": "TMS",
+        "description": "Gestiona y optimiza tu transporte de carga con nuestra plataforma de gestion de transporte.",
+        "link_text": "Ver solucion",
+        "link_url": {
+          "href": "/soluciones",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "image": {
+          "src": "https://pinittms.com/hs-fs/hubfs/AiPinit_Sketch_Vans_CH.png?width=600&height=579&name=AiPinit_Sketch_Vans_CH.png",
+          "alt": "Carrier Hub - Optimiza asignaciones de transporte",
+          "loading": "lazy",
+          "width": 600,
+          "height": 579
+        },
+        "title": "Carrier Hub",
+        "description": "Conecta con una red de transportistas verificados y gestiona tus envios de forma eficiente.",
+        "link_text": "Ver solucion",
+        "link_url": {
+          "href": "/soluciones",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "image": {
+          "src": "https://pinittms.com/hs-fs/hubfs/AiPinit_Sketch_Lego_CH.png?width=600&height=579&name=AiPinit_Sketch_Lego_CH.png",
+          "alt": "Servicios Plug and Play - Soluciones modulares con IA",
+          "loading": "lazy",
+          "width": 600,
+          "height": 579
+        },
+        "title": "Servicios Plug & Play",
+        "description": "Soluciones listas para implementar que se integran con tus sistemas existentes.",
+        "link_text": "Ver mas",
+        "link_url": {
+          "href": "/servicios",
+          "type": "EXTERNAL"
+        }
+      }
+    ],
+    "children": [
+      {
+        "name": "image",
+        "label": "Card Image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Card image",
+          "loading": "lazy"
+        }
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Card Title"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Card description goes here."
+      },
+      {
+        "name": "link_text",
+        "label": "Link Text",
+        "type": "text",
+        "default": "Ver mas"
+      },
+      {
+        "name": "link_url",
+        "label": "Link URL",
+        "type": "url",
+        "default": {
+          "href": "#",
+          "type": "EXTERNAL"
+        }
+      }
+    ]
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

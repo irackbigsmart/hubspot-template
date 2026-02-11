@@ -1,0 +1,11 @@
+{
+  "label": "Pinit_Product_Cards",
+  "css_assets": [],
+  "js_assets": [],
+  "other_assets": [],
+  "global": false,
+  "host_template_types": ["PAGE"],
+  "is_available_for_new_content": true,
+  "categories": ["BODY_CONTENT"],
+  "smart_type": "NOT_SMART"
+}

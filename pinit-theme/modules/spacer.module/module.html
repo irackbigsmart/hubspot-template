@@ -1,0 +1,19 @@
+{% set heights = {"sm": 24, "md": 48, "lg": 80} %}
+{% set h = heights[module.size] || module.custom_height || 48 %}
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .spacer {
+        height: {{ h ~ "px" }};
+      }
+      @media (max-width: 767px) {
+        .spacer {
+          height: {{ (h * 0.6)|round ~ "px" }};
+        }
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div class="spacer{{ ' hide-desktop' if module.hide_desktop }}{{ ' hide-tablet' if module.hide_tablet }}{{ ' hide-mobile' if module.hide_mobile }}" aria-hidden="true"></div>

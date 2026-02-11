@@ -1,0 +1,8 @@
+/* Pinit v1.0 - Theme Overrides */
+/* Uses theme settings from fields.json via HubL variables */
+
+body {
+  font-family: {{ theme.global_fonts.primary.font }}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: {{ theme.global_colors.text.color }};
+  background-color: {{ theme.global_colors.background.color }};
+}

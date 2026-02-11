@@ -1,0 +1,100 @@
+.product-cards {
+  background: #FFFFFF;
+  padding: var(--space-section-md) var(--space-gutter);
+}
+
+.product-cards__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-cards__heading {
+  font: var(--text-h2);
+  color: var(--color-purple, #602166);
+  text-align: center;
+  margin-bottom: var(--space-card-gap);
+}
+
+.product-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-card-gap);
+}
+
+.product-cards__item {
+  background: var(--color-gray-5, #F6F6F6);
+  border-radius: var(--radius, 8px);
+  padding: var(--space-card-padding);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.product-cards__image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-cards__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius, 8px);
+}
+
+.product-cards__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-cards__title {
+  font: var(--text-h3);
+  color: var(--color-purple, #602166);
+  margin-bottom: 12px;
+}
+
+.product-cards__desc {
+  font-family: var(--font-primary, 'Rubik', sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-gray, #4F4F4F);
+  margin-bottom: var(--space-heading-gap);
+  flex: 1;
+}
+
+.product-cards__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary, 'Rubik', sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-green, #53B66C);
+  transition: gap 0.2s ease;
+}
+
+.product-cards__link:hover {
+  gap: 10px;
+}
+
+@media (max-width: 767px) {
+  .product-cards {
+    padding: var(--space-section-md-mobile) var(--space-gutter-mobile);
+  }
+
+  .product-cards__heading {
+    font: var(--text-h2-mobile);
+    margin-bottom: var(--space-heading-gap);
+  }
+
+  .product-cards__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-card-gap-mobile);
+  }
+
+  .product-cards__item {
+    padding: var(--space-card-padding-mobile);
+  }
+}

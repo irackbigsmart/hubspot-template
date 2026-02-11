@@ -1,0 +1,16 @@
+<!--
+  templateType: page
+  label: Landing Page
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/landing-page.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content"
+    label="Main Content",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,51 @@
+<!--
+  templateType: section
+  label: Pinit_Cards_Section
+  isAvailableForNewContent: true
+  description: 3-column card grid. Stacks to 1 column on mobile.
+  screenshotPath: ../images/section-previews/cards-section.png
+-->
+
+{% dnd_section
+  padding={"top": 60, "bottom": 60},
+  max_width=1200
+%}
+  {% dnd_column width=4, offset=0 %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="background: #F6F6F6; border-radius: 8px; padding: 32px;">
+            <h3>Card One</h3>
+            <p>Description for the first card. Edit this content in the page editor.</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+  {% dnd_column width=4, offset=4 %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="background: #F6F6F6; border-radius: 8px; padding: 32px;">
+            <h3>Card Two</h3>
+            <p>Description for the second card. Edit this content in the page editor.</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+  {% dnd_column width=4, offset=8 %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="background: #F6F6F6; border-radius: 8px; padding: 32px;">
+            <h3>Card Three</h3>
+            <p>Description for the third card. Edit this content in the page editor.</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

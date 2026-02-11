@@ -1,0 +1,78 @@
+.cta-form {
+  padding: var(--space-section-md) var(--space-gutter);
+}
+
+.cta-form__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-form__heading {
+  font: var(--text-h2);
+  color: var(--color-purple);
+  margin-bottom: var(--space-content-gap);
+}
+
+.cta-form__desc {
+  font: var(--text-body);
+  color: var(--color-gray);
+  margin-bottom: var(--space-card-gap);
+}
+
+.cta-form__desc p {
+  margin: 0;
+}
+
+.cta-form__placeholder {
+  background: #FFFFFF;
+  border: 2px dashed var(--color-gray-20);
+  border-radius: var(--radius);
+  padding: 40px;
+  color: var(--color-gray-60);
+}
+
+/* HubSpot form overrides */
+.cta-form .hs-form {
+  text-align: left;
+}
+
+.cta-form .hs-form .hs-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray-20);
+  border-radius: var(--radius);
+  font: var(--text-body);
+  background: #FFFFFF;
+}
+
+.cta-form .hs-form .hs-input:focus {
+  outline: none;
+  border-color: var(--color-purple);
+}
+
+.cta-form .hs-form .hs-button {
+  background: var(--color-green);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 32px;
+  font: var(--text-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cta-form .hs-form .hs-button:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 767px) {
+  .cta-form {
+    padding: var(--space-section-md-mobile) var(--space-gutter-mobile);
+  }
+
+  .cta-form__heading {
+    font: var(--text-h2-mobile);
+  }
+}

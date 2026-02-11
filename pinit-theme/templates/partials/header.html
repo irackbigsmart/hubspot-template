@@ -1,0 +1,72 @@
+<!--
+  templateType: global_partial
+  label: Header
+  isAvailableForNewContent: false
+-->
+
+{# ===== Top Bar (Language Switcher) ===== #}
+<div class="top-bar">
+  <div class="top-bar__inner">
+    {% module "language_switcher"
+      path="@hubspot/language_switcher",
+      label="Language Switcher",
+      display_mode="localized"
+    %}
+  </div>
+</div>
+
+{# ===== Main Header ===== #}
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">
+      <img src="https://pinittms.com/hs-fs/hubfs/AiPinit/AiPinit_Logo_Web_Head.webp?width=270&height=108&name=AiPinit_Logo_Web_Head.webp" alt="AiPinit" width="135" height="54">
+    </a>
+
+    <button class="site-header__toggle" aria-label="Menu" aria-expanded="false">
+      <i class="ti ti-menu-2"></i>
+    </button>
+
+    <nav class="site-header__nav" role="navigation" aria-label="Main navigation">
+      <div class="hs-menu-wrapper hs-menu-flow-horizontal">
+        <ul role="menu">
+          <li class="hs-menu-item" role="none">
+            <a href="/" role="menuitem">Inicio</a>
+          </li>
+          <li class="hs-menu-item hs-item-has-children" role="none">
+            <a href="/soluciones" role="menuitem">Soluciones</a>
+            <ul class="hs-menu-children-wrapper" role="menu">
+              <li class="hs-menu-item" role="none">
+                <a href="/soluciones/tms" role="menuitem">TMS</a>
+              </li>
+              <li class="hs-menu-item" role="none">
+                <a href="/soluciones/carrier-hub" role="menuitem">Carrier Hub</a>
+              </li>
+            </ul>
+          </li>
+          <li class="hs-menu-item hs-item-has-children" role="none">
+            <a href="/servicios" role="menuitem">Servicios</a>
+            <ul class="hs-menu-children-wrapper" role="menu">
+              <li class="hs-menu-item" role="none">
+                <a href="/servicios/trueaddress" role="menuitem">TrueAddress IA</a>
+              </li>
+              <li class="hs-menu-item" role="none">
+                <a href="/servicios/route-solver" role="menuitem">Route Solver</a>
+              </li>
+              <li class="hs-menu-item" role="none">
+                <a href="/servicios/rout-it" role="menuitem">Rout it</a>
+              </li>
+              <li class="hs-menu-item" role="none">
+                <a href="/servicios/analytics" role="menuitem">Analytics</a>
+              </li>
+            </ul>
+          </li>
+          <li class="hs-menu-item" role="none">
+            <a href="/sobre-nosotros" role="menuitem">Sobre nosotros</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <a href="/contacto" class="btn btn--secondary site-header__cta">Hablemos</a>
+  </div>
+</header>

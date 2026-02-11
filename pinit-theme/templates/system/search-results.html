@@ -1,0 +1,16 @@
+<!--
+  templateType: search_results_page
+  label: Search Results
+  isAvailableForNewContent: false
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <section class="search-results">
+    <div class="container">
+      <h1>Search Results</h1>
+      {{ content.post_body }}
+    </div>
+  </section>
+{% endblock body %}

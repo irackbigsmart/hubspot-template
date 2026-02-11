@@ -1,0 +1,26 @@
+<section class="logo-carousel{{ ' hide-desktop' if module.hide_desktop }}{{ ' hide-tablet' if module.hide_tablet }}{{ ' hide-mobile' if module.hide_mobile }}">
+  <div class="logo-carousel__inner">
+    {% if module.heading %}
+      <h2 class="logo-carousel__heading">{{ module.heading }}</h2>
+    {% endif %}
+    <div class="logo-carousel__track-wrapper">
+      <div class="logo-carousel__track">
+        {% for logo in module.logos %}
+          {% if logo.image.src %}
+            <div class="logo-carousel__item">
+              <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" loading="lazy">
+            </div>
+          {% endif %}
+        {% endfor %}
+        {# Duplicate for infinite scroll effect #}
+        {% for logo in module.logos %}
+          {% if logo.image.src %}
+            <div class="logo-carousel__item">
+              <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" loading="lazy" aria-hidden="true">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

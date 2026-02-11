@@ -1,0 +1,63 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Gestionamos mas de 50 Millones de ordenes en Latam"
+  },
+  {
+    "name": "logos",
+    "label": "Client Logos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "default": 11
+    },
+    "default": [
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Walmart.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Walmart.webp", "alt": "Walmart" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Coppel.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Coppel.webp", "alt": "Coppel" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Sears.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Sears.webp", "alt": "Sears" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Claro.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Claro.webp", "alt": "Claro" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Sanborns.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Sanborns.webp", "alt": "Sanborns" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_PriceShoes.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_PriceShoes.webp", "alt": "PriceShoes" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Carso.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Carso.webp", "alt": "Carso" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Xcargo.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Xcargo.webp", "alt": "Xcargo" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_TraeloYa.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_TraeloYa.webp", "alt": "TraeloYa" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_EnvioClick.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_EnvioClick.webp", "alt": "EnvioClick" } },
+      { "image": { "src": "https://pinittms.com/hs-fs/hubfs/Logos%202.0/Pinit_SitioWeb_LogosClientes_Big.webp?width=600&height=200&name=Pinit_SitioWeb_LogosClientes_Big.webp", "alt": "Big" } }
+    ],
+    "children": [
+      {
+        "name": "image",
+        "label": "Logo",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Client logo"
+        }
+      }
+    ]
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

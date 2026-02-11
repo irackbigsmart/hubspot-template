@@ -1,0 +1,8 @@
+[
+  {
+    "name": "content",
+    "label": "Content",
+    "type": "richtext",
+    "default": "<p>Enter your content here.</p>"
+  }
+]

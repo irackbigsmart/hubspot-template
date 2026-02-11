@@ -1,0 +1,23 @@
+<!--
+  templateType: section
+  label: Pinit_Spacer_Section
+  isAvailableForNewContent: true
+  description: Empty spacing section. Adjustable height.
+  screenshotPath: ../images/section-previews/spacer-section.png
+-->
+
+{% dnd_section
+  padding={"top": 40, "bottom": 40}
+%}
+  {% dnd_column width=12 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/spacer.module",
+        fields={
+          "height": 48
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

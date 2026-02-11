@@ -1,0 +1,52 @@
+<!--
+  templateType: section
+  label: Pinit_CTA_Section
+  isAvailableForNewContent: true
+  description: Full-width call to action with heading, text and button.
+  screenshotPath: ../images/section-previews/cta-section.png
+-->
+
+{% dnd_section
+  background_color={"color": "#53B66C", "opacity": 100},
+  padding={"top": 60, "bottom": 60},
+  vertical_alignment="MIDDLE",
+  max_width=1200
+%}
+  {% dnd_column width=8, offset=2 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title.module",
+        fields={
+          "title": "Ready to get started?",
+          "heading_level": "h2",
+          "styles": {
+            "text_color": {"color": "#FFFFFF"},
+            "alignment": "center"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <p style="text-align: center; color: #FFFFFF; font-size: 18px;">Take the next step and see what we can do for you.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/cta.module",
+        fields={
+          "heading": "",
+          "text": "",
+          "button": {
+            "text": "Contact Us",
+            "url": {"href": "#", "type": "EXTERNAL"}
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "image",
+    "label": "Image",
+    "type": "image",
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "lazy"
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "label": "Pinit_Rich_Text",
+  "icon": "",
+  "categories": ["BODY_CONTENT"],
+  "tags": ["text", "content"],
+  "is_available_for_new_content": true,
+  "global": false,
+  "host_template_types": ["PAGE", "BLOG_LISTING"],
+  "css_assets": [],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART"
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Ready to get started?"
+  },
+  {
+    "name": "text",
+    "label": "Text",
+    "type": "richtext",
+    "default": "<p>Description text here.</p>"
+  },
+  {
+    "name": "button",
+    "label": "Button",
+    "type": "group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Button Text",
+        "type": "text",
+        "default": "Get Started"
+      },
+      {
+        "name": "url",
+        "label": "Button URL",
+        "type": "url",
+        "default": {
+          "href": "#",
+          "type": "EXTERNAL"
+        }
+      }
+    ]
+  }
+]

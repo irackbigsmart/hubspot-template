@@ -1,0 +1,53 @@
+[
+  {
+    "name": "size",
+    "label": "Size",
+    "type": "choice",
+    "display": "radio",
+    "choices": [
+      ["sm", "S (24px)"],
+      ["md", "M (48px)"],
+      ["lg", "L (80px)"],
+      ["custom", "Custom"]
+    ],
+    "default": "md",
+    "tab": "STYLE"
+  },
+  {
+    "name": "custom_height",
+    "label": "Custom height (px)",
+    "type": "number",
+    "display": "slider",
+    "min": 8,
+    "max": 200,
+    "default": 48,
+    "suffix": "px",
+    "tab": "STYLE",
+    "visibility": {
+      "controlling_field_path": "size",
+      "operator": "EQUAL",
+      "controlling_value_regex": "custom"
+    }
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

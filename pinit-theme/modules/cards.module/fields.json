@@ -1,0 +1,40 @@
+[
+  {
+    "name": "cards",
+    "label": "Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 3
+    },
+    "default": [
+      {
+        "title": "Card 1",
+        "description": "<p>Card description.</p>"
+      },
+      {
+        "title": "Card 2",
+        "description": "<p>Card description.</p>"
+      },
+      {
+        "title": "Card 3",
+        "description": "<p>Card description.</p>"
+      }
+    ],
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Card Title"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "richtext",
+        "default": "<p>Card description.</p>"
+      }
+    ]
+  }
+]

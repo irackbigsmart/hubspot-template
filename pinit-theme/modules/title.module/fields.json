@@ -1,0 +1,67 @@
+[
+  {
+    "name": "title",
+    "label": "Title",
+    "type": "text",
+    "default": "Your Title Here",
+    "inline_help_text": "Main heading text"
+  },
+  {
+    "name": "heading_level",
+    "label": "Heading Level",
+    "type": "choice",
+    "choices": [
+      ["h1", "H1"],
+      ["h2", "H2"],
+      ["h3", "H3"],
+      ["h4", "H4"]
+    ],
+    "default": "h2"
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "text_color",
+        "label": "Text Color",
+        "type": "color",
+        "default": { "color": "#000000" }
+      },
+      {
+        "name": "alignment",
+        "label": "Alignment",
+        "type": "choice",
+        "choices": [
+          ["left", "Left"],
+          ["center", "Center"],
+          ["right", "Right"]
+        ],
+        "default": "left"
+      }
+    ]
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

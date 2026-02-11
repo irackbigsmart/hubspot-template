@@ -1,0 +1,11 @@
+{
+  "label": "Pinit_CTA_Form",
+  "css_assets": [],
+  "js_assets": [],
+  "other_assets": [],
+  "global": false,
+  "host_template_types": ["PAGE"],
+  "is_available_for_new_content": true,
+  "categories": ["FORMS_AND_BUTTONS"],
+  "smart_type": "NOT_SMART"
+}

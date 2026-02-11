@@ -1,0 +1,17 @@
+<!--
+  templateType: blog_post
+  label: Blog Post
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  <article class="blog-post">
+    <div class="container">
+      {# Blog post content renders here automatically #}
+      {{ content.post_body }}
+    </div>
+  </article>
+{% endblock body %}

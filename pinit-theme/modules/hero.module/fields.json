@@ -1,0 +1,36 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Hero Heading"
+  },
+  {
+    "name": "subheading",
+    "label": "Subheading",
+    "type": "richtext",
+    "default": "<p>Hero subheading text</p>"
+  },
+  {
+    "name": "cta",
+    "label": "CTA Button",
+    "type": "group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Button Text",
+        "type": "text",
+        "default": "Learn More"
+      },
+      {
+        "name": "url",
+        "label": "Button URL",
+        "type": "url",
+        "default": {
+          "href": "#",
+          "type": "EXTERNAL"
+        }
+      }
+    ]
+  }
+]

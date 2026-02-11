@@ -1,0 +1,16 @@
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .pinit-title {
+        color: {{ module.styles.text_color.color }};
+        text-align: {{ module.styles.alignment }};
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{% if module.title %}
+  <div class="{{ 'hide-desktop' if module.hide_desktop }} {{ 'hide-tablet' if module.hide_tablet }} {{ 'hide-mobile' if module.hide_mobile }}">
+    <{{ module.heading_level }} class="pinit-title">{{ module.title }}</{{ module.heading_level }}>
+  </div>
+{% endif %}

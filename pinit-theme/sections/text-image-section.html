@@ -1,0 +1,60 @@
+<!--
+  templateType: section
+  label: Pinit_Text_Image_Section
+  isAvailableForNewContent: true
+  description: Two columns - text left, image right. Stacks on mobile.
+  screenshotPath: ../images/section-previews/text-image-section.png
+-->
+
+{% dnd_section
+  padding={"top": 60, "bottom": 60},
+  vertical_alignment="MIDDLE",
+  max_width=1200
+%}
+  {# Text Column #}
+  {% dnd_column width=6, offset=0 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/title.module",
+        fields={
+          "title": "About This Section",
+          "heading_level": "h2",
+          "styles": {
+            "text_color": {"color": "#000000"},
+            "alignment": "left"
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <p>Add your description here. This two-column layout is great for explaining features, telling your story, or highlighting benefits alongside a visual.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/cta.module",
+        fields={
+          "heading": "",
+          "text": "",
+          "button": {
+            "text": "Learn More",
+            "url": {"href": "#", "type": "EXTERNAL"}
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+  {# Image Column #}
+  {% dnd_column width=6, offset=6 %}
+    {% dnd_row %}
+      {% dnd_module path="../modules/image.module" %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

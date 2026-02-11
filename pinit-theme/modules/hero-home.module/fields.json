@@ -1,0 +1,149 @@
+[
+  {
+    "name": "headline",
+    "label": "Headline",
+    "type": "text",
+    "default": "Tecnologia para logistica"
+  },
+  {
+    "name": "headline_highlight",
+    "label": "Highlighted text",
+    "type": "text",
+    "default": "logistica"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "richtext",
+    "default": "<p>Soluciones tecnologicas avanzadas para optimizar tu cadena de suministro, transporte y entregas de ultima milla.</p>"
+  },
+  {
+    "name": "button_primary",
+    "label": "Primary Button",
+    "type": "group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Text",
+        "type": "text",
+        "default": "Agenda sesion"
+      },
+      {
+        "name": "url",
+        "label": "URL",
+        "type": "url",
+        "default": {
+          "href": "#contacto",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "name": "style",
+        "label": "Button Style",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["primary", "Purple (solid)"],
+          ["secondary", "Green (solid)"],
+          ["outline", "Purple (outline)"],
+          ["outline-green", "Green (outline)"],
+          ["ghost", "Purple (text only)"],
+          ["ghost-green", "Green (text only)"]
+        ],
+        "default": "primary"
+      }
+    ]
+  },
+  {
+    "name": "button_secondary",
+    "label": "Secondary Button",
+    "type": "group",
+    "children": [
+      {
+        "name": "text",
+        "label": "Text",
+        "type": "text",
+        "default": "Solicitar cotizacion"
+      },
+      {
+        "name": "url",
+        "label": "URL",
+        "type": "url",
+        "default": {
+          "href": "#contacto",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "name": "style",
+        "label": "Button Style",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["outline", "Purple (outline)"],
+          ["outline-green", "Green (outline)"],
+          ["primary", "Purple (solid)"],
+          ["secondary", "Green (solid)"],
+          ["ghost", "Purple (text only)"],
+          ["ghost-green", "Green (text only)"]
+        ],
+        "default": "outline"
+      }
+    ]
+  },
+  {
+    "name": "image",
+    "label": "Hero Image",
+    "type": "image",
+    "default": {
+      "src": "https://pinittms.com/hs-fs/hubfs/Pinit_Website_Home_Head.webp?width=2000&height=1770&name=Pinit_Website_Home_Head.webp",
+      "alt": "TMS Pinit",
+      "loading": "eager"
+    }
+  },
+  {
+    "name": "bg_color",
+    "label": "Section Background",
+    "type": "color",
+    "default": {
+      "color": "#FFFFFF"
+    }
+  },
+  {
+    "name": "title_color",
+    "label": "Title Color",
+    "type": "color",
+    "default": {
+      "color": "#602166"
+    }
+  },
+  {
+    "name": "text_color",
+    "label": "Text Color",
+    "type": "color",
+    "default": {
+      "color": "#4F4F4F"
+    }
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

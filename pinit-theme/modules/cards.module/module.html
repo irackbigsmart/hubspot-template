@@ -1,0 +1,14 @@
+{% if module.cards %}
+  <div class="cards">
+    {% for card in module.cards %}
+      <div class="cards__item">
+        {% if card.title %}
+          <h3 class="cards__title">{{ card.title }}</h3>
+        {% endif %}
+        {% if card.description %}
+          <div class="cards__description">{{ card.description }}</div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

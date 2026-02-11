@@ -1,0 +1,28 @@
+<section class="product-cards{{ ' hide-desktop' if module.hide_desktop }}{{ ' hide-tablet' if module.hide_tablet }}{{ ' hide-mobile' if module.hide_mobile }}">
+  <div class="product-cards__inner">
+    {% if module.heading %}
+      <h2 class="product-cards__heading">{{ module.heading }}</h2>
+    {% endif %}
+    <div class="product-cards__grid">
+      {% for card in module.cards %}
+        <div class="product-cards__item">
+          <div class="product-cards__image">
+            {% if card.image.src %}
+              <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" loading="{{ card.image.loading }}" width="{{ card.image.width }}" height="{{ card.image.height }}">
+            {% endif %}
+          </div>
+          <div class="product-cards__content">
+            <h3 class="product-cards__title">{{ card.title }}</h3>
+            <p class="product-cards__desc">{{ card.description }}</p>
+            {% if card.link_text %}
+              <a href="{{ card.link_url.href }}" class="product-cards__link">
+                {{ card.link_text }}
+                <i class="ti ti-arrow-right"></i>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Agenda una sesion"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "richtext",
+    "default": "<p>Completa el formulario y un experto se pondra en contacto contigo.</p>"
+  },
+  {
+    "name": "form",
+    "label": "HubSpot Form",
+    "type": "form",
+    "default": {
+      "response_type": "inline",
+      "message": "Gracias por contactarnos. Nos pondremos en contacto pronto."
+    }
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "bg_color",
+        "label": "Background Color",
+        "type": "color",
+        "default": {
+          "color": "#F6F6F6"
+        }
+      }
+    ]
+  },
+  {
+    "name": "hide_desktop",
+    "label": "Hide on Desktop",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_tablet",
+    "label": "Hide on Tablet",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  },
+  {
+    "name": "hide_mobile",
+    "label": "Hide on Mobile",
+    "type": "boolean",
+    "default": false,
+    "tab": "STYLE"
+  }
+]

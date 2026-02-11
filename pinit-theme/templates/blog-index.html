@@ -1,0 +1,16 @@
+<!--
+  templateType: blog_listing
+  label: Blog Listing
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content"
+    label="Main Content",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+{% endblock body %}

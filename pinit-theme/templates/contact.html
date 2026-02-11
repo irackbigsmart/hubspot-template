@@ -1,0 +1,16 @@
+<!--
+  templateType: page
+  label: Contact
+  isAvailableForNewContent: true
+  screenshotPath: ../images/template-previews/contact.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content"
+    label="Main Content",
+    class="content-wrapper"
+  %}
+  {% end_dnd_area %}
+{% endblock body %}
